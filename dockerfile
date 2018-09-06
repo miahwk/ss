@@ -10,7 +10,7 @@ COPY ./ss-fly /
 WORKDIR /ss-fly
 
 RUN apt-get update
-RUN ss-fly.sh -i ${PASSWD} ${PORT} 
+RUN ss-fly.sh -i ${PASSWD} ${PORT} \
 && ss-fly.sh -bbr
 
 EXPOSE 1024
