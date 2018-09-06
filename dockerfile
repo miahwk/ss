@@ -5,11 +5,11 @@ MAINTAINER Mihawk
 ENV PORT=1024
 ENV PASSWD=""
 
-COPY ./ss-fly /
+RUN apt-get update
+RUN git clone https://github.com/flyzy2005/ss-fly
 
 WORKDIR /ss-fly
 
-RUN apt-get update
 RUN ss-fly.sh -i ${PASSWD} ${PORT} \
 && ss-fly.sh -bbr
 
